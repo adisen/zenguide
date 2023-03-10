@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zenguide/splash/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,22 +16,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold(
-          backgroundColor: Colors.blue,
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                Image(image: AssetImage('assets/welcomeImage.png')),
-                Text('Zen Guide',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold)),
-              ],
-            ),
-          ),
-        ));
+        home: const Splash());
   }
 }
