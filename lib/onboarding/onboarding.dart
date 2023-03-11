@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const List<String> list = <String>[
+  '\$5,000 - \$9,000',
+  '\$10,000 - \$15,000',
+  '\$16,000 - \$20,000',
+  '\$21,000 - \$25,000',
+  '\$25,000 - \$100,000',
+];
+
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
 
@@ -110,7 +118,101 @@ class Onboarding2 extends StatelessWidget {
                     iconSize: 100,
                     color: Colors.black,
                     onPressed: () {
-                      print('Pressed');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Onboarding3()),
+                      );
+                    })),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Onboarding3 extends StatefulWidget {
+  const Onboarding3({super.key});
+
+  @override
+  State<Onboarding3> createState() => _Onboarding3State();
+}
+
+class _Onboarding3State extends State<Onboarding3> {
+  String dropdownValue = list.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF287bff),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(35.0, 0, 35.0, 60),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('What is your living expenses?',
+                    style: GoogleFonts.montserrat(
+                      textStyle: const TextStyle(
+                          fontSize: 45,
+                          fontWeight: FontWeight.w700,
+                          height: 1.4,
+                          fontFamily: 'Montserrat'),
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(top: 20.0),
+                  child: SizedBox(
+                    width: 280,
+                    height: 80,
+                    child: DropdownButtonFormField<String>(
+                      iconEnabledColor: Colors.black,
+                      iconDisabledColor: Colors.black,
+                      iconSize: 50,
+                      value: dropdownValue,
+                      icon: const Icon(Icons.keyboard_arrow_down_sharp),
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
+                      decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          )),
+                      onChanged: (String? value) {
+                        // This is called when the user selects an item.
+                        setState(() {
+                          dropdownValue = value!;
+                        });
+                      },
+                      items: list.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Container(
+                margin: const EdgeInsets.only(top: 100.0),
+                child: IconButton(
+                    icon: const Icon(Icons.arrow_right_alt_sharp),
+                    iconSize: 100,
+                    color: Colors.black,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Onboarding3()),
+                      );
                     })),
           ],
         ),
