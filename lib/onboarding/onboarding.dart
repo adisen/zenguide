@@ -211,7 +211,7 @@ class _Onboarding3State extends State<Onboarding3> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const Onboarding3()),
+                            builder: (context) => const Onboarding()),
                       );
                     })),
           ],
