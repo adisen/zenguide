@@ -25,7 +25,7 @@ class Onboarding extends StatelessWidget {
             Text('Welcome to your Financial Assistant',
                 style: GoogleFonts.montserrat(
                   textStyle: const TextStyle(
-                      fontSize: 45,
+                      fontSize: 40,
                       fontWeight: FontWeight.w700,
                       height: 1.4,
                       fontFamily: 'Montserrat'),
@@ -68,7 +68,7 @@ class Onboarding2 extends StatelessWidget {
                 Text('Do you know what a credit score is?',
                     style: GoogleFonts.montserrat(
                       textStyle: const TextStyle(
-                          fontSize: 45,
+                          fontSize: 40,
                           fontWeight: FontWeight.w700,
                           height: 1.4,
                           fontFamily: 'Montserrat'),
@@ -157,7 +157,7 @@ class _Onboarding3State extends State<Onboarding3> {
                 Text('What is your living expenses?',
                     style: GoogleFonts.montserrat(
                       textStyle: const TextStyle(
-                          fontSize: 45,
+                          fontSize: 40,
                           fontWeight: FontWeight.w700,
                           height: 1.4,
                           fontFamily: 'Montserrat'),
@@ -239,7 +239,7 @@ class Onboarding4 extends StatelessWidget {
                 Text('Do you have a credit card?',
                     style: GoogleFonts.montserrat(
                       textStyle: const TextStyle(
-                          fontSize: 45,
+                          fontSize: 40,
                           fontWeight: FontWeight.w700,
                           height: 1.4,
                           fontFamily: 'Montserrat'),
@@ -320,7 +320,7 @@ class Onboarding5 extends StatelessWidget {
                 Text('Do you have a savings account?',
                     style: GoogleFonts.montserrat(
                       textStyle: const TextStyle(
-                          fontSize: 45,
+                          fontSize: 40,
                           fontWeight: FontWeight.w700,
                           height: 1.4,
                           fontFamily: 'Montserrat'),
@@ -358,6 +358,83 @@ class Onboarding5 extends StatelessWidget {
                           child: const Text('No'),
                         ),
                       )
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Container(
+                margin: const EdgeInsets.only(top: 100.0),
+                child: IconButton(
+                    icon: const Icon(Icons.arrow_right_alt_sharp),
+                    iconSize: 100,
+                    color: Colors.black,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Onboarding6()),
+                      );
+                    })),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Onboarding6 extends StatelessWidget {
+  const Onboarding6({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF287bff),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(35.0, 0, 35.0, 60),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Column(
+              children: [
+                Text('How familiar are you with investments?',
+                    style: GoogleFonts.montserrat(
+                      textStyle: const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700,
+                          height: 1.4,
+                          fontFamily: 'Montserrat'),
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(top: 20.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(right: 20.0),
+                        child: const Icon(Icons.star,
+                            color: Colors.white, size: 40),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(right: 20.0),
+                        child: const Icon(Icons.star,
+                            color: Colors.white, size: 40),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(right: 20.0),
+                        child: const Icon(Icons.star,
+                            color: Colors.white, size: 40),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(right: 20.0),
+                        child: const Icon(Icons.star,
+                            color: Colors.white, size: 40),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(right: 20.0),
+                        child: const Icon(Icons.star,
+                            color: Colors.white, size: 40),
+                      ),
                     ],
                   ),
                 )
