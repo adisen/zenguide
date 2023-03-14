@@ -693,6 +693,52 @@ class Onboarding9 extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
+                            builder: (context) => const Onboarding10()),
+                      );
+                    })),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Onboarding10 extends StatelessWidget {
+  const Onboarding10({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF287bff),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(35.0, 0, 35.0, 60),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Column(
+              children: [
+                Text(
+                    'gimme a minute, I am creating a personal guide for you...',
+                    style: GoogleFonts.montserrat(
+                      textStyle: const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700,
+                          height: 1.4,
+                          fontFamily: 'Montserrat'),
+                    )),
+              ],
+            ),
+            Container(
+                margin: const EdgeInsets.only(top: 100.0),
+                child: IconButton(
+                    icon: const Icon(Icons.arrow_right_alt_sharp),
+                    iconSize: 100,
+                    color: Colors.black,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
                             builder: (context) => const Onboarding6()),
                       );
                     })),
